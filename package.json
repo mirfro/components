@@ -1,0 +1,13 @@
+{
+  "name": "@mirfro/components",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A collection of libraries for building font-ends of Web applications",
+  "keywords": [],
+  "author": {
+    "name": "Ruben Maguregui",
+    "email": "ruben.maguregui@gmail.com",
+    "url": "https://rmaguregui.com"
+  },
+  "license": "MIT"
+}
