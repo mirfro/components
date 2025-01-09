@@ -1,6 +1,6 @@
 {
   "name": "@mirfro/web-components",
-  "version": "0.0.0-alpha.3",
+  "version": "0.0.0-alpha.4",
   "description": "A library of stand-alone, standards-based Web Components",
   "type": "module",
   "main": "dist/index.cjs",
@@ -15,7 +15,7 @@
       "import": "./dist/index.cjs",
       "require": "./index.cjs"
     },
-    "./*": "./*"
+    "./*": "./dist/*"
   },
   "scripts": {
     "build": "vite build"
