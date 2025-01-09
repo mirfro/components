@@ -1,12 +1,30 @@
 {
   "name": "web-components",
   "version": "0.0.0-alpha.1",
-  "description": "",
+  "description": "A library of stand-alone, standards-based Web Components",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": {
+    "name": "Rubén Maguregui",
+    "email": "ruben.maguregui@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "imask": "^7.6.1"
+  },
+  "devDependencies": {
+    "vite-plugin-dts": "^4.4.0",
+    "vite-plugin-node-polyfills": "^0.22.0",
+    "vitest": "^2.1.8",
+    "vite": "^6.0.7"
+  },
+  "overrides": {
+    "vite-plugin-node-polyfills": {
+      "vite": "^6.0.7"
+    }
+  }
 }
