@@ -15,7 +15,7 @@
       "import": "./dist/index.cjs",
       "require": "./index.cjs"
     },
-    "./*": "./dist/*"
+    "./*": "./dist/*.js"
   },
   "scripts": {
     "build": "vite build"
