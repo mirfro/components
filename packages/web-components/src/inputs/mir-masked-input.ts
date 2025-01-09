@@ -1,27 +1,34 @@
 import IMask, { InputMask } from 'imask';
 
 export class MirMaskedInput extends HTMLInputElement {
-    #masker: InputMask;
+    static maskAttributes = ['mask-pattern', 'mask-regexp', 'mask-number'];
+    #inputMask: InputMask;
 
     connectedCallback() {
-        this.#masker = IMask(this, {
-            mask: this.getAttribute('pattern'),
-        });
+        for (const attr of MirMaskedInput.maskAttributes) {
+            if (this.hasAttribute(attr)) {
+                this[attr](this.getAttribute(attr));
+                return;
+            }
+        }
+        console.warn('No mask-* attribute was set for element "mir-masked-input"');
     }
     disconnectedCallback() {
-        this.#masker.destroy();
+        this.#inputMask.destroy();
     }
 
-    attributeChangedCallback(name: string, prev: unknown, value: string) {
-        if (this[`${name}Changed`]) {
-            this[`${name}Changed`](prev, value);
-        }
+    ['mask-pattern'](mask: string): void {
+        this.#inputMask = IMask(this, {
+            mask: mask,
+        });
     }
-
-    patternChanged(prev: unknown, value: string) {
-        if (this.#masker) {
-            this.#masker.mask = value;
-        }
+    ['mask-regexp'](mask: string): void {
+        this.#inputMask = IMask(this, {
+            mask: new RegExp(mask),
+        });
+    }
+    ['mask-number'](options: string) {
+        this.#inputMask = IMask(this, {mask: Number, ...JSON.parse(options || '{}')});
     }
 }
-customElements.define('mir-masked-input', MirMaskedInput);
+customElements.define('mir-masked-input', MirMaskedInput, { extends: 'input'});

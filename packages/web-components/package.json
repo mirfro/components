@@ -1,6 +1,6 @@
 {
   "name": "@mirfro/web-components",
-  "version": "0.0.0-alpha.5",
+  "version": "0.0.0-beta.1",
   "description": "A library of stand-alone, standards-based Web Components",
   "type": "module",
   "main": "dist/index.cjs",
@@ -18,7 +18,8 @@
     "./*": "./dist/*.js"
   },
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "start": "vite"
   },
   "keywords": [],
   "author": {
@@ -39,5 +40,6 @@
     "vite-plugin-node-polyfills": {
       "vite": "^6.0.7"
     }
-  }
+  },
+  "web-types": "./web-types.json"
 }

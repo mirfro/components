@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/web-types.json",
+  "name": "@mirfro/web-components",
+  "version": "0.0.1",
+  "description-markup": "markdown",
+  "contributions": {
+    "html": {
+      "attributes": [
+        {
+          "name": "mask-pattern",
+          "description": "A pattern against which to mask the input. Example: `{+52}(000) 000 0000` for a phone number"
+        }, {
+          "name": "mask-regexp",
+          "description": "A regular expression against which to mask the input. Example: `{+52}(000) 000 0000` for a phone number"
+        }, {
+          "name": "mask-number",
+          "description": "Mask the input as a number according to the specified options (example: `mask-number='{\"thousandsSeparator: \" \"\"}'`)",
+          "value": {
+            "required": false
+          }
+        }
+      ]
+    }
+  }
+}
