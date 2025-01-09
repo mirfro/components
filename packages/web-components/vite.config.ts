@@ -4,7 +4,7 @@ import dts from "vite-plugin-dts";
 export default defineConfig({
   build: {
     lib: {
-      entry: 'src/inputs/mir-masked-input.ts',
+      entry: ['src/index.ts', 'src/inputs/mir-masked-input.ts'],
       formats: ['es', 'cjs'],
     },
     outDir: './dist',
